@@ -2,13 +2,17 @@
 
 If you use a shortcut keys with <kbd>Ctrl</kbd> often, you can create a more ergonomic layout by using <kbd>Caps Lock</kbd> and <kbd>Enter</kbd>, two big keys in the home row, as <kbd>Ctrl</kbd> modifiers.
 
-You need not give up on the <kbd>Enter</kbd> key behavior you are used to: it will act as usual when you strike it a single time, or like <kbd>Ctrl</kbd> when held down as a modifier for other keys.
+You need not give up on the key behavior you are used to: <kbd>Enter</kbd> and <kbd>Caps Lock</kbd> will act as usual when you strike them a single time, or like <kbd>Ctrl</kbd> when held down as a modifier for other keys.
 
-## Requirements
+## Supported platforms
+
+Home Row Control uses X11, which means no native support Windows or Mac support.
+
+## Dependencies
 
 * [Xcape](https://github.com/alols/xcape)
+* xmodmap
 * bash
-* x11
 
 ## Usage
 
