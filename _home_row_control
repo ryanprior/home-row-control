@@ -7,22 +7,24 @@
 ## COPYING or https://creativecommons.org/publicdomain/zero/1.0/ for
 ## details.
 
-function enter_acts_as_ctrl () {
-    # arbitrary high (>255) key number to avoid conflict
-    local key='0x1024'
-    # enter key number, as reported by xev
-    local enter_key_number='36'
-    xmodmap -e "keycode $enter_key_number = $key"
-    xmodmap -e "add control = $key"
+function enter_acts_as_ctrl ()
+{
+    xmodmap -e "remove mod4 = Hyper_L"
+    xmodmap -e "keycode 36 = Hyper_L"
+    xmodmap -e "add Control = Hyper_L"
     xmodmap -e "keycode any = Return"
-    xcape   -e "$key=Return"
 }
 
-function remap_caps_to_ctrl () {
-    setxkbmap -option ctrl:nocaps
+function caps_acts_as_ctrl ()
+{
+    xmodmap -e "remove lock = Caps_Lock"
+    xmodmap -e "keycode 66 = XF86Finance"
+    xmodmap -e "add Control = XF86Finance"
+    xmodmap -e "keycode any = Caps_Lock"
 }
 
 (
     enter_acts_as_ctrl
-    remap_caps_to_ctrl
+    caps_acts_as_ctrl
+    xcape -e "Hyper_L=Return;XF86Finance=Caps_Lock"
 ) 2>&1 >/dev/null &
