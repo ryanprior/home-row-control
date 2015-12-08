@@ -6,7 +6,7 @@ You need not give up on the key behavior you are used to: <kbd>Enter</kbd> and <
 
 ## Supported platforms
 
-Home Row Control uses X11, which means no native support Windows or Mac support.
+Home Row Control uses X11, which means no native Windows or Mac support. (help wanted! see bugs #1 and #2)
 
 ## Dependencies
 
