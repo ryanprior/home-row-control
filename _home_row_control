@@ -11,20 +11,20 @@ function enter_acts_as_ctrl ()
 {
     xmodmap -e "remove mod4 = Hyper_L"
     xmodmap -e "keycode 36 = Hyper_L"
-    xmodmap -e "add Control = Hyper_L"
+    xmodmap -e "add control = Hyper_L"
     xmodmap -e "keycode any = Return"
 }
 
 function caps_acts_as_ctrl ()
 {
     xmodmap -e "remove lock = Caps_Lock"
-    xmodmap -e "keycode 66 = XF86Finance"
-    xmodmap -e "add Control = XF86Finance"
+    xmodmap -e "keycode 66 = Control_R"
+    xmodmap -e "add control = Control_R"
     xmodmap -e "keycode any = Caps_Lock"
 }
 
 (
     enter_acts_as_ctrl
     caps_acts_as_ctrl
-    xcape -e "Hyper_L=Return;XF86Finance=Caps_Lock"
+    xcape -e "Hyper_L=Return;Control_R=Caps_Lock"
 ) 2>&1 >/dev/null &
