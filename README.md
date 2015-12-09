@@ -20,30 +20,30 @@ Run `_home_row_control` to activate for the current session. Optionally, set up 
 
 ### Detailed explanation of effects
 
-1. <key>Enter</key> is reassigned to <key>Hyper</key> which should
-   have no effect in most contexts. When you press <key>Enter</key>,
+1. <kbd>Enter</kbd> is reassigned to <kbd>Hyper</kbd> which should
+   have no effect in most contexts. When you press <kbd>Enter</kbd>,
    the system sees a key up and key down event corresponding to
-   <key>Hyper</key> and also applies the same modifier as if a
-   <key>Control</key> were held down.
+   <kbd>Hyper</kbd> and also applies the same modifier as if a
+   <kbd>Control</kbd> were held down.
    
    If you tap it briefly (<1 second) without pressing other keys
    between press and release, it will trigger the normal
-   <key>Enter</key> behavior. This means the key press will not
+   <kbd>Enter</kbd> behavior. This means the key press will not
    register immediately when you press, but will instead come a
    fraction of a second later upon release.
 
-2. <key>Caps Lock</key> is reassigned to <key>Right Control</key>.
-   When you press <key>Caps Lock</key> the system sees a key up and
-   key down event corresponding to <key>Right Control</key> and
+2. <kbd>Caps Lock</kbd> is reassigned to <kbd>Right Control</kbd>.
+   When you press <kbd>Caps Lock</kbd> the system sees a key up and
+   key down event corresponding to <kbd>Right Control</kbd> and
    applies its modifier.
    
-   If you tap either <key>Caps Lock</key> or <key>Right Control</key>
+   If you tap either <kbd>Caps Lock</kbd> or <kbd>Right Control</kbd>
    briefly (<1 second) without pressing any other keys between press
-   and release, it will trigger the normal <key>Caps Lock</key>
+   and release, it will trigger the normal <kbd>Caps Lock</kbd>
    behavior.
    
-   I chose to use <key>Right Control</key> this way because X11
+   I chose to use <kbd>Right Control</kbd> this way because X11
    apparently doesn't recognize separate left- and right-
-   <key>Hyper</key> keys. If you know of a better option that does not
+   <kbd>Hyper</kbd> keys. If you know of a better option that does not
    change the behavior of the normal control keys at all, please let
    me know.
