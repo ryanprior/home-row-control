@@ -1,0 +1,4 @@
+remove lock = Caps_Lock
+keycode 66 = Control_R
+add control = Control_R
+keycode any = Caps_Lock

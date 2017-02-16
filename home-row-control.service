@@ -1,0 +1,13 @@
+[Unit]
+Description=using caps-lock and enter as extra ctrl modifiers
+Documentation=https://github.com/ryanprior/home-row-control/blob/master/README.md
+
+[Service]
+Type=forking
+Environment=DISPLAY=:0
+ExecStart=/usr/local/bin/_home_row_control
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

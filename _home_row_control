@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 ### home row control: use big keys on the home row as ctrl modifiers
 
 ## Author: Ryan Prior <ryanprior@gmail.com>
@@ -7,24 +7,6 @@
 ## COPYING or https://creativecommons.org/publicdomain/zero/1.0/ for
 ## details.
 
-function enter_acts_as_ctrl ()
-{
-    xmodmap -e "remove mod4 = Hyper_L"
-    xmodmap -e "keycode 36 = Hyper_L"
-    xmodmap -e "add control = Hyper_L"
-    xmodmap -e "keycode any = Return"
-}
-
-function caps_acts_as_ctrl ()
-{
-    xmodmap -e "remove lock = Caps_Lock"
-    xmodmap -e "keycode 66 = Control_R"
-    xmodmap -e "add control = Control_R"
-    xmodmap -e "keycode any = Caps_Lock"
-}
-
-(
-    enter_acts_as_ctrl
-    caps_acts_as_ctrl
-    xcape -e "Hyper_L=Return;Control_R=Caps_Lock"
-) 2>&1 >/dev/null &
+xmodmap /etc/home-row-control/maps/enter.map
+xmodmap /etc/home-row-control/maps/caps.map
+xcape -e "Hyper_L=Return;Control_R=Caps_Lock"

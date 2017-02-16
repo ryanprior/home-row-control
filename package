@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+PACKAGE_NAME="home-row-control"
+VERSION="0.1"
+
+CONF_DIR=/etc/home-row-control
+CONF=user.conf
+CONF_TARGET=$CONF_DIR/$CONF
+
+SCRIPT=_home_row_control
+SCRIPT_TARGET=/usr/local/bin/$SCRIPT
+
+CHANGELOG=CHANGELOG.md
+
+DOC=README.md
+DOC_TARGET=/usr/share/doc/home-row-control/$DOC
+
+SERVICE=home-row-control.service
+SERVICE_TARGET=/usr/lib/systemd/user/$SERVICE
+
+set -x
+fpm -s dir \
+    -t deb \
+    -n $PACKAGE_NAME \
+    -v $VERSION \
+    --license "CC-0" \
+    --maintainer "Ryan Prior <ryanprior@gmail.com>" \
+    --vendor "Ryan Prior" \
+    --description "Use big modifier keys in the home row for Ctrl" \
+    -a all \
+    --url "https://github.com/ryanprior/home-row-control" \
+    "-d "{xcape,x11-xserver-utils,coreutils,dash} \
+    --config-files $CONF_DIR \
+    --deb-changelog $CHANGELOG \
+    --deb-no-default-config-files \
+    $SCRIPT=$SCRIPT_TARGET \
+    $DOC=$DOC_TARGET \
+    $SERVICE=$SERVICE_TARGET \
+    maps=$CONF_DIR
