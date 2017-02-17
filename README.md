@@ -11,8 +11,8 @@ Home Row Control uses X11, which means no native Windows or Mac support. (help w
 ### Dependencies
 
 * [Xcape](https://github.com/alols/xcape)
-* xmodmap
-* bash
+* xmodmap (from `x11-server-utils`)
+* posix sh (eg. `dash`)
 
 ## Usage
 
@@ -47,3 +47,18 @@ Run `_home_row_control` to activate for the current session. Optionally, set up 
    <kbd>Hyper</kbd> keys. If you know of a better option that does not
    change the behavior of the normal control keys at all, please let
    me know.
+
+## Building packages
+
+You can use the included `package` script to build your own packages.
+The packaging dependencies are:
+
+* `ruby`
+* `fpm` (installed as a ruby gem)
+* `bash`
+* `debuild` and `rpmbuild`
+
+### Running the packaging script
+
+1. in the project directory, run `bundle install`
+2. run `bundle exec ./package`
