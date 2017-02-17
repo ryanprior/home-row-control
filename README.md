@@ -6,13 +6,22 @@ You need not give up on the key behavior you are used to: <kbd>Enter</kbd> and <
 
 ## Supported platforms
 
-Home Row Control uses X11, which means no native Windows or Mac support. (help wanted! see bugs #1 and #2)
+Home Row Control uses X11, which means no native Windows or Mac support.
+
+_(help wanted to support other platforms! see bugs #1 and #2)_
 
 ### Dependencies
 
 * [Xcape](https://github.com/alols/xcape)
 * xmodmap (from `x11-server-utils`)
 * posix sh (eg. `dash`)
+* optionally systemd, to run automatically when you start your X session
+
+_(help wanted to support auto-start for other init systems! see bug #8)_
+
+### Installing
+
+You can find binary packages (`deb`, `rpm`, and `tar`) plus a self-executing `.sh` installer in [releases](https://github.com/ryanprior/home-row-control/releases/latest).
 
 ## Usage
 
