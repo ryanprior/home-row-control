@@ -4,7 +4,7 @@ Documentation=https://github.com/ryanprior/home-row-control/blob/master/README.m
 
 [Service]
 Type=forking
-Environment=DISPLAY=:0
+Environment="DISPLAY=:0"
 ExecStart=/usr/local/bin/_home_row_control
 Restart=always
 RestartSec=5

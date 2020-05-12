@@ -21,11 +21,16 @@ _(help wanted to support auto-start for other init systems! see bug #8)_
 
 ### Installing
 
-You can find binary packages (`deb`, `rpm`, and `tar`) plus a self-executing `.sh` installer in [releases](https://github.com/ryanprior/home-row-control/releases/latest).
+You can find binary packages (`deb`, `rpm`, and `tar`) plus a self-executing
+`.sh` installer in
+[releases](https://github.com/ryanprior/home-row-control/releases/latest).
+
+After installing, run `systemctl --user start home-row-control`.
 
 ## Usage
 
-Run `_home_row_control` to activate for the current session. Optionally, set up your system to run that command automatically on login.
+Run `_home_row_control` to activate for the current session. Optionally, set up
+your system to run that command automatically on login.
 
 ### Detailed explanation of effects
 
@@ -56,6 +61,25 @@ Run `_home_row_control` to activate for the current session. Optionally, set up 
    <kbd>Hyper</kbd> keys. If you know of a better option that does not
    change the behavior of the normal control keys at all, please let
    me know.
+
+## Troubleshooting
+
+Sometimes the system seems to lose the keymap. If you're using systemd you can
+reset like so:
+
+```sh-session
+$ systemctl --user restart home-row-control
+```
+
+Otherwise you can serach for the home-row-control xcape process and kill it,
+then run `_home_row_control` again.
+
+### Useful fact
+
+It might be helpful to know that <kbd>Ctrl</kbd>+<kbd>m</kbd> replicates the
+effect of the <kbd>Enter</kbd> key when it's temporarily disabled during a
+home-row-control outage. I would like to know how to make it more resillient, if
+you have ideas please propose them!
 
 ## Building packages
 

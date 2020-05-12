@@ -29,7 +29,7 @@ do
             -n $PACKAGE_NAME \
             -v $VERSION \
             --license "CC-0" \
-            --maintainer "Ryan Prior <ryanprior@gmail.com>" \
+            --maintainer "Ryan Prior <rprior@protonmail.com>" \
             --vendor "Ryan Prior" \
             --description "Use big modifier keys in the home row for Ctrl" \
             -a all \
