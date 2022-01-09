@@ -7,6 +7,6 @@
 ## COPYING or https://creativecommons.org/publicdomain/zero/1.0/ for
 ## details.
 
-xmodmap /etc/home-row-control/maps/enter.map
-xmodmap /etc/home-row-control/maps/caps.map
-xcape -e "Hyper_L=Return;Control_R=Caps_Lock"
+xmodmap maps/enter.map
+xmodmap maps/caps.map
+exec xcape -e "Hyper_L=Return;Control_R=Caps_Lock"
