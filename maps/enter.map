@@ -1,4 +1,0 @@
-remove mod4 = Hyper_L
-keycode 36 = Hyper_L
-add control = Hyper_L
-keycode any = Return
