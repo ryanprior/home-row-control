@@ -1,0 +1,21 @@
+#| home-row-ctrl.kbd -- KMonad map for extra ctrl keys -*- mode: lisp -*-
+
+Tapping [Caps] or [Enter] give the normal behavior, while when held down they
+act as [Ctrl] modifier.
+
+|#
+
+(defcfg
+  allow-cmd false
+  fallthrough true
+  input (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  output (uinput-sink "KMonad"))
+
+
+(defsrc caps enter)
+
+(defalias caps (tap-next caps lctl))
+(defalias enter (tap-next enter rctl))
+
+(deflayer default
+    @caps @enter)
