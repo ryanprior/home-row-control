@@ -1,12 +1,15 @@
 #!/bin/sh
 ### home row control: use big keys on the home row as ctrl modifiers
 
-## Author: Ryan Prior <ryanprior@gmail.com>
+## Author: Ryan Prior <rprior@protonmail.com>
 
 ## This file is free software dedicated to the public domain. See
 ## COPYING or https://creativecommons.org/publicdomain/zero/1.0/ for
 ## details.
 
-xmodmap maps/enter.map
-xmodmap maps/caps.map
-exec xcape -e "Hyper_L=Return;Control_R=Caps_Lock"
+if ! command -v kmonad >/dev/null; then
+    echo >&2 "home-row-control: fatal: couldn't find kmonad"
+    exit 1
+fi
+
+exec kmonad maps/home-row-ctrl.kbd
